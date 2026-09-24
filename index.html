@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Chat Room — Desi Adult Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Auth / Guest Login Screen -->
+        <section id="auth-screen" class="screen active">
+            <div class="auth-card">
+                <div class="logo-area">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <h1>Indian Chat Room</h1>
+                    <p class="subtitle">Desi private & adult discussions. 18+ Only.</p>
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="username">Choose Nickname</label>
+                        <input type="text" id="username" placeholder="e.g. DesiRomeo99" required minlength="3" maxlength="20">
+                    </div>
+                    <div class="input-group">
+                        <label for="room-select">Select Chat Room (State)</label>
+                        <select id="room-select" required>
+                            <!-- Injected dynamically with 28 Indian States -->
+                        </select>
+                    </div>
+                    <div class="age-check">
+                        <input type="checkbox" id="age-verify" required>
+                        <label for="age-verify">I am 18 years or older and agree to chat responsibly with other adults.</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Enter Chat Room</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Main Chat Screen -->
+        <section id="chat-screen" class="screen">
+            <header class="chat-header">
+                <div class="room-info">
+                    <span class="status-dot"></span>
+                    <div class="room-selector-wrapper">
+                        <select id="header-room-select" class="header-dropdown" aria-label="Switch Room">
+                            <!-- Injected dynamically -->
+                        </select>
+                        <small id="online-count">1.2k online</small>
+                    </div>
+                </div>
+                <button id="leave-btn" class="btn-icon" title="Exit Room">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </button>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages injected via JS -->
+            </div>
+
+            <div class="hindi-quick-bar">
+                <button type="button" class="quick-chip" data-text="Kya haal hai?">Kya haal hai? 👋</button>
+                <button type="button" class="quick-chip" data-text="Kahan se ho sab?">Kahan se ho? 📍</button>
+                <button type="button" class="quick-chip" data-text="Akele ho kya?">Akele ho kya? 😉</button>
+                <button type="button" class="quick-chip" data-text="PM me aao na private chat karte hain 🔥">PM me aao 🔥</button>
+                <button type="button" class="quick-chip" data-text="Mera name batao?">Mera name batao? 🤔</button>
+                <button type="button" class="quick-chip" data-text="Aapka phone number milega?">Number milega? 📱</button>
+            </div>
+
+            <form id="chat-form" class="chat-input-area">
+                <input type="text" id="message-input" placeholder="Type message in Hindi or English..." autocomplete="off" required minlength="1">
+                <button type="submit" class="btn-send" aria-label="Send Message">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
